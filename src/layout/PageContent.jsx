@@ -1,10 +1,14 @@
-import React from 'react'
-import ProductCard from '../components/ProductCard'
+import React, { Children } from 'react'
 
-export default function PageContent() {
+import Header from './Header'
+import Footer from './Footer'
+
+export default function PageContent ({children}) {
   return (
     <div>
-        <ProductCard />
+        <Header />
+        <main>{children}</main>
+        <Footer />
     </div>
   )
 }

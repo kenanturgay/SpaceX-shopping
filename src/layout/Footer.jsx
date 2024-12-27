@@ -1,3 +1,4 @@
+import { Facebook, Instagram, Twitter } from "lucide-react";
 import React from "react";
 
 export default function Footer() {
@@ -11,16 +12,21 @@ export default function Footer() {
               Bandage
             </h3>
           </div>
-          <div className="flex flex-row text-2xl mb-6 gap-5">
-            <a href="#" className="text-blue-400">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="text-blue-400">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="text-blue-400">
-              <i className="fab fa-twitter"></i>
-            </a>
+          <div className="flex text-2xl mb-6 gap-5">
+            {[
+              { icon: Facebook, label: "Facebook", href: "#" },
+              { icon: Instagram, label: "Instagram", href: "#" },
+              { icon: Twitter, label: "Twitter", href: "#" },
+            ].map(({ icon: Icon, label, href }, index) => (
+              <a
+                key={index}
+                href={href}
+                className="text-blue-400 hover:text-blue-600 transition duration-300"
+                aria-label={label}
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
 
@@ -112,7 +118,7 @@ export default function Footer() {
 
       {/* Alt Bilgi */}
       <p className="text-center text-sm font-semibold font-montserrat">
-        Made With Love By <br/> Finland All Rights Reserved.
+        Made With Love By <br /> Finland All Rights Reserved.
       </p>
     </footer>
   );
