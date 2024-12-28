@@ -6,6 +6,8 @@ import Footer from "./layout/Footer";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 import ShopPage from "./pages/ShopPage";
+import ContactPage from "./pages/ContactPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
         <Route path="/product/:id" component={ProductDetailPage} />
+        <Route path="/contact" component={ContactPage} />
         
       </Switch>
       

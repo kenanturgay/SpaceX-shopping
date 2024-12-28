@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import carouselInner from "../assets/inners/carousel-inner.png";
 
 export default function ProductCard({ id }) {
   return (
