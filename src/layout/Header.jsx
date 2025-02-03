@@ -1,60 +1,127 @@
-import React from "react";
+import React, { useState } from "react";
 import basketIcon from "../assets/Icons/basketIcon.png";
+import { Link } from "react-router-dom";
 import moreIcon from "../assets/Icons/moreIcon.png";
 import searchIcon from "../assets/Icons/searchIcon.png";
 import personIcon from "../assets/Icons/personIcon.png";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Menu,
+  Phone,
+  Search,
+  ShoppingCart,
+  X,
+  User,
+  Youtube,
+  LogOut,
+  ChevronDown,
+  UserCircle,
+} from "lucide-react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen((prev) => !prev);
+  };
+
   return (
     <header>
-      <nav>
-        <div className="container mx-auto flex justify-between items-center pt-8 pl-8 pr-8">
-          <a
-            href="/"
-            className="font-montserrat font-semibold text-2xl color-[#252B42]"
+      {/* Mobile Navbar */}
+      <div className="my-2 flex items-center justify-between bg-white px-4 py-2 md:hidden">
+        {/* Company Name */}
+        <div className="text-3xl font-bold text-gray-800">t-Wix</div>
+
+        {/* Icons */}
+        <div className="flex items-center space-x-6">
+          <button className="text-gray-600 hover:text-gray-800">
+            <User />
+          </button>
+
+          <button className="text-gray-600 hover:text-gray-800">
+            <Search />
+          </button>
+          <button className="text-gray-600 hover:text-gray-800">
+            <ShoppingCart />
+          </button>
+          <button
+            className="text-gray-600 hover:text-gray-800"
+            onClick={toggleMenu}
           >
-            Bandage
-          </a>
-          <div className="flex items-center gap-5">
-            <a href="">
-              <img src={personIcon} alt="" />
-            </a>
-            <a href="">
-              <img src={searchIcon} alt="" />
-            </a>
-            <a href="">
-              <img src={basketIcon} alt="" />
-            </a>
-            <a href="">
-              <img src={moreIcon} alt="" />
-            </a>
+            <Menu />
+          </button>
+        </div>
+      </div>
+      {/* Mobile Menu */}
+      <div
+        className={`${
+          isMenuOpen ? "flex" : "hidden"
+        } flex-col items-center py-4 text-3xl text-fgray sm:hidden`}
+      >
+        <ul className="mx-auto text-center">
+          <li className="my-4">Home</li>
+          <li className="my-4">Product</li>
+          <li className="my-4">Pricing</li>
+          <li className="my-4">Contact</li>
+        </ul>
+      </div>
+      {/* Desktop Header */}
+
+      <div className="hidden md:block">
+        <div className="bg-secondary">
+          <div className="container mx-auto flex justify-between px-4 py-4 text-white lg:px-10">
+            {/* Contact Info */}
+            <div className="hidden gap-6 font-bold md:flex">
+              <div className="flex gap-2">
+                <Phone color="lightGray" />
+                <h6>(212) 234-0118</h6>
+              </div>
+              <div className="flex gap-2">
+                <Mail color="#FAFAFA" />
+                <h6>kenan@t-wix.com</h6>
+              </div>
+            </div>
+            {/* Message */}
+            <h6 className="hidden xl:block">
+              Follow Us and get a chance to win 25% off
+            </h6>
+            <div className="hidden items-center gap-4 md:flex">
+              <h6>Follow Us:</h6>
+              <Instagram color="#FAFAFA" />
+              <Youtube color="#FAFAFA" />
+              <Facebook color="#FAFAFA" />
+              <X color="#FAFAFA" />
+            </div>
           </div>
         </div>
-        <div className="text-3xl p-28">
-          <ul className="flex flex-col items-center gap-9 font-montserrat font-semibold text-[#737373]">
-            <li>
-              <a href="/" className="hover:font-thin">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/Product" className="hover:font-thin">
-                Product
-              </a>
-            </li>
-            <li>
-              <a href="/Pricing" className="hover:font-thin">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:font-thin">
-                Contact
-              </a>
-            </li>
-          </ul>
+        {/* Navbar */}
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between bg-white px-4 py-6 lg:p">
+            {/* Logo */}
+            <Link to="/" className="text-3xl font-bold text-gray-800">
+              T-wix
+            </Link>
+            {/* Navigation */}
+            <nav className="hidden md:block">
+              <ul className="flex gap-6 text-h6 font-bold text-fgray">
+                <li>Home</li>
+                <Link to="/shop">Shop</Link>
+                <li>About</li>
+                <li>Blog</li>
+                <li>Contact</li>
+                <li>Pages</li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
