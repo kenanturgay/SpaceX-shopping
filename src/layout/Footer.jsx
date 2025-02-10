@@ -7,11 +7,11 @@ export default function Footer() {
     <footer>
       {/* Sosyal Medya İkonları */}
 
-      <div className="bg-lightGray">
-        <div className="container mx-auto flex flex-col items-start justify-between gap-4 px-6 py-6 sm:flex-row sm:items-center 2xl:px-36">
-          <div className="text-3xl font-bold text-gray-800">t-Wix</div>
-          <div className="flex space-x-4">
-            <button>
+      <div className="bg-white px-11 text-footer_text_color">
+        <div className="container mx-auto flex flex-col items-start justify-between gap-4  py-16 sm:flex-row sm:items-center 2xl:px-36">
+          <div className="text-3xl font-bold">t-Wix</div>
+          <div className="flex space-x-4 text-footer_icon_color">
+            <button >
               <Facebook />
             </button>
             <button>
@@ -26,13 +26,13 @@ export default function Footer() {
 
       {/* Bilgi Grupları */}
 
-      <div className="container mx-auto">
-        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-12 px-4 py-8 sm:grid-cols-4 md:grid-cols-6 lg:px-0">
+      <div className="container mx-auto px-11 text-footer_text_color">
+        <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-x-12 py-8 sm:grid-cols-4 md:grid-cols-6 lg:px-0">
           {footerInfo.map((section, index) => (
-            <div key={index} className="mb-4">
-              <h5 className="mb-4">{section.title}</h5>
+            <div key={index} className="mb-10">
+              <h5 className="mb-4 text-lg font-montserrat font-bold">{section.title}</h5>
               {section.links.map((link, idx) => (
-                <p key={idx} className="text">
+                <p key={idx} className="text font-montserrat font-semibold text-sm py-1">
                   {link}
                 </p>
               ))}
@@ -42,22 +42,22 @@ export default function Footer() {
       </div>
 
       {/* İletişim ve Abonelik */}
-      <div className="mt-8 mb-8 font-montserrat text-base">
-        <h3 className="font-semibold mb-2">Get in Touch</h3>
+      <div className="mt-8 mb-8 font-montserrat text-base px-11">
+        <h3 className="font-semibold mb-6">Get in Touch</h3>
         <div className="flex justify-center">
           <input
             type="email"
             placeholder="Your Email"
             className="border border-gray-300 rounded-l-lg px-4 py-2 font-montserrat text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-60 max-h-14 "
           />
-          <button className="bg-buttonPrimaryColor text-white px-4 py-2 rounded-r-lg text-sm h-14">
+          <button className="bg-footer_button text-white px-4 py-2 rounded-r-lg text-sm h-14">
             Subscribe
           </button>
         </div>
       </div>
 
       {/* Alt Bilgi */}
-      <p className="text-center text-sm font-semibold font-montserrat">
+      <p className="text-center text-sm font-semibold font-montserrat mb-5 mt-24">
         Made With Love By <br /> Finland All Rights Reserved.
       </p>
     </footer>
