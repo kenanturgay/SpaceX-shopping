@@ -7,6 +7,8 @@ module.exports = {
         secondary: "#0D5C63",
         fgray: "#737373",
         lightGray: "#FAFAFA",
+        primary_color: "#23A6F0",
+        contact_text:"#FFFFFF",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"], // Montserrat fontu

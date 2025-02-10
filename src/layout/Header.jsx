@@ -69,7 +69,8 @@ export default function Header() {
           <li className="my-4">Home</li>
           <li className="my-4">Product</li>
           <li className="my-4">Pricing</li>
-          <li className="my-4">Contact</li>
+            
+          <Link to="/contact" className="my-4">Contact</Link>
         </ul>
       </div>
       {/* Desktop Header */}
@@ -103,7 +104,7 @@ export default function Header() {
         </div>
         {/* Navbar */}
         <div className="container mx-auto">
-          <div className="flex items-center justify-between bg-white px-4 py-6 lg:p">
+          <div className="flex items-center justify-between bg-white px-2 py-6 ">
             {/* Logo */}
             <Link to="/" className="text-3xl font-bold text-gray-800">
               T-wix
@@ -115,7 +116,7 @@ export default function Header() {
                 <Link to="/shop">Shop</Link>
                 <li>About</li>
                 <li>Blog</li>
-                <li>Contact</li>
+                <Link to="/contact">Contact</Link>
                 <li>Pages</li>
               </ul>
             </nav>
