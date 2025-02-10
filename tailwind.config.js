@@ -4,11 +4,16 @@ module.exports = {
     extend: {
       colors: {
         primary: "#FF7B47",
-        secondary: "#0D5C63",
+        secondary: "#252B42",
         fgray: "#737373",
         lightGray: "#FAFAFA",
         primary_color: "#23A6F0",
         contact_text:"#FFFFFF",
+        header_bg_color:"#252B42",
+        footer_text_color:"#252B42",
+        footer_icon_color:"#23A6F0",
+        footer_button:"#23A6F0",
+        footer_second_text_color:"#737373",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"], // Montserrat fontu
