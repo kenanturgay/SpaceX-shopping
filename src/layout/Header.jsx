@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import basketIcon from "../assets/Icons/basketIcon.png";
+
 import { Link } from "react-router-dom";
-import moreIcon from "../assets/Icons/moreIcon.png";
-import searchIcon from "../assets/Icons/searchIcon.png";
-import personIcon from "../assets/Icons/personIcon.png";
+
 import {
   Facebook,
   Instagram,
@@ -12,7 +10,7 @@ import {
   Phone,
   Search,
   ShoppingCart,
-  X,
+  Twitter,
   User,
   Youtube,
   LogOut,
@@ -22,15 +20,14 @@ import {
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  
+  
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const toggleProfileDropdown = () => {
-    setIsProfileDropdownOpen((prev) => !prev);
-  };
+  
 
   return (
     <header>
@@ -76,7 +73,7 @@ export default function Header() {
       {/* Desktop Header */}
 
       <div className="hidden md:block">
-        <div className="bg-secondary">
+        <div className="bg-header_bg_color">
           <div className="container mx-auto flex justify-between px-4 py-4 text-white lg:px-10">
             {/* Contact Info */}
             <div className="hidden gap-6 font-bold md:flex">
@@ -98,7 +95,7 @@ export default function Header() {
               <Instagram color="#FAFAFA" />
               <Youtube color="#FAFAFA" />
               <Facebook color="#FAFAFA" />
-              <X color="#FAFAFA" />
+              <Twitter color="#FAFAFA" />
             </div>
           </div>
         </div>
